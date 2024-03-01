@@ -11,11 +11,14 @@ extends Control
 @onready var digit_9: Label = %digit9
 @onready var digit_10: Label = %digit10
 
+@onready var back_button: Button = %BackButton
+@onready var save_button: Button = %SaveButton
+
+const phone_numbers_min := 1000000000
+const phone_numbers_max := 9999999999
+
 var generated_numbers: Array = []
 var digits_label_array: Array = []
-
-const phone_numbers_min = 1000000000
-const phone_numbers_max := 9999999999
 
 func _ready() -> void:
 	digits_label_array = [digit, digit_2, digit_3, digit_4, digit_5, digit_6, digit_7, digit_8, digit_9, digit_10]
@@ -42,6 +45,8 @@ func _on_next_button_pressed() -> void:
 	if success:
 		# Get recent number and pass it for display
 		display_phone_number(generated_numbers[-1])
+		check_if_back_button_needs_disabling()
+		check_if_save_button_needs_disabling()
 
 func generate_random_phone_number_digits() -> bool:
 	# Loop until return unique array of digits
@@ -62,6 +67,14 @@ func _on_back_button_pressed() -> void:
 	generated_numbers.pop_back()
 	
 	# Grab the previous number
-	var previous_number = generated_numbers.pop_back()
+	var previous_number = generated_numbers[-1]
 	
 	display_phone_number(previous_number)
+	check_if_back_button_needs_disabling()
+	check_if_save_button_needs_disabling()
+
+func check_if_back_button_needs_disabling() -> void:
+	back_button.disabled = false if generated_numbers.size() > 1 else true
+
+func check_if_save_button_needs_disabling() -> void:
+	save_button.disabled = false if generated_numbers.size() else true
