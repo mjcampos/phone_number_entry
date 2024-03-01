@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://c266s4b80brr"]
+[gd_scene load_steps=7 format=3 uid="uid://c266s4b80brr"]
 
 [ext_resource type="LabelSettings" uid="uid://dvgb7x0nwmied" path="res://digit_label_settings.tres" id="1_6lghw"]
 [ext_resource type="Script" path="res://MainView/main_view.gd" id="1_joqg2"]
+[ext_resource type="Script" path="res://MainView/MainContainer.gd" id="3_6w7s7"]
 [ext_resource type="Script" path="res://MainView/API.gd" id="3_c25mt"]
+[ext_resource type="LabelSettings" uid="uid://bxbed8gbj1odp" path="res://error_label_settings.tres" id="5_12f84"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_5yidf"]
 font_size = 32
@@ -25,46 +27,138 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="InputsContainer" type="VBoxContainer" parent="."]
-visible = false
+[node name="API" type="Node" parent="."]
+script = ExtResource("3_c25mt")
+
+[node name="HTTPRequest" type="HTTPRequest" parent="API"]
+unique_name_in_owner = true
+
+[node name="MainContainer" type="MarginContainer" parent="."]
 layout_mode = 1
-anchors_preset = 14
+anchors_preset = 8
+anchor_left = 0.5
 anchor_top = 0.5
-anchor_right = 1.0
+anchor_right = 0.5
 anchor_bottom = 0.5
-offset_top = -54.0
-offset_bottom = 54.0
+offset_left = -342.0
+offset_top = -160.0
+offset_right = 342.0
+offset_bottom = 160.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/margin_left = 200
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 200
+theme_override_constants/margin_bottom = 100
+script = ExtResource("3_6w7s7")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="InputsContainer"]
+[node name="DisplayContainer" type="VBoxContainer" parent="MainContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="Message" type="Label" parent="MainContainer/DisplayContainer"]
+layout_mode = 2
+text = "Placeholder"
+label_settings = SubResource("LabelSettings_5yidf")
+
+[node name="Fact1" type="Label" parent="MainContainer/DisplayContainer"]
+layout_mode = 2
+text = "placeholder
+"
+label_settings = ExtResource("1_6lghw")
+
+[node name="Fact2" type="Label" parent="MainContainer/DisplayContainer"]
+layout_mode = 2
+text = "placeholder
+"
+label_settings = ExtResource("1_6lghw")
+
+[node name="Fact3" type="Label" parent="MainContainer/DisplayContainer"]
+layout_mode = 2
+text = "placeholder
+"
+label_settings = ExtResource("1_6lghw")
+
+[node name="Fact4" type="Label" parent="MainContainer/DisplayContainer"]
+layout_mode = 2
+text = "placeholder
+"
+label_settings = ExtResource("1_6lghw")
+
+[node name="Fact5" type="Label" parent="MainContainer/DisplayContainer"]
+layout_mode = 2
+text = "placeholder
+"
+label_settings = ExtResource("1_6lghw")
+
+[node name="Fact6" type="Label" parent="MainContainer/DisplayContainer"]
+layout_mode = 2
+text = "placeholder
+"
+label_settings = ExtResource("1_6lghw")
+
+[node name="Fact7" type="Label" parent="MainContainer/DisplayContainer"]
+layout_mode = 2
+text = "placeholder
+"
+label_settings = ExtResource("1_6lghw")
+
+[node name="Fact8" type="Label" parent="MainContainer/DisplayContainer"]
+layout_mode = 2
+text = "placeholder
+"
+label_settings = ExtResource("1_6lghw")
+
+[node name="Fact9" type="Label" parent="MainContainer/DisplayContainer"]
+layout_mode = 2
+text = "placeholder
+"
+label_settings = ExtResource("1_6lghw")
+
+[node name="Fact10" type="Label" parent="MainContainer/DisplayContainer"]
+layout_mode = 2
+text = "placeholder
+"
+label_settings = ExtResource("1_6lghw")
+
+[node name="InputsContainer" type="VBoxContainer" parent="MainContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 10
+
+[node name="NameContainer" type="HBoxContainer" parent="MainContainer/InputsContainer"]
 layout_mode = 2
 theme_override_constants/separation = 15
 alignment = 1
 
-[node name="FirstNameInput" type="LineEdit" parent="InputsContainer/HBoxContainer"]
+[node name="FirstNameInput" type="LineEdit" parent="MainContainer/InputsContainer/NameContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 placeholder_text = "First Name"
 max_length = 40
 
-[node name="LastNameInput" type="LineEdit" parent="InputsContainer/HBoxContainer"]
+[node name="LastNameInput" type="LineEdit" parent="MainContainer/InputsContainer/NameContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 placeholder_text = "Last Name"
 max_length = 40
 
-[node name="DigitsDisplayContainer" type="HBoxContainer" parent="InputsContainer"]
+[node name="DigitsDisplayContainer" type="HBoxContainer" parent="MainContainer/InputsContainer"]
 layout_mode = 2
 theme_override_constants/separation = 10
 alignment = 1
 
-[node name="Label" type="Label" parent="InputsContainer/DigitsDisplayContainer"]
+[node name="Label" type="Label" parent="MainContainer/InputsContainer/DigitsDisplayContainer"]
 layout_mode = 2
 text = "("
 label_settings = ExtResource("1_6lghw")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="digit" type="Label" parent="InputsContainer/DigitsDisplayContainer"]
+[node name="digit" type="Label" parent="MainContainer/InputsContainer/DigitsDisplayContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "0"
@@ -72,7 +166,7 @@ label_settings = ExtResource("1_6lghw")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="digit2" type="Label" parent="InputsContainer/DigitsDisplayContainer"]
+[node name="digit2" type="Label" parent="MainContainer/InputsContainer/DigitsDisplayContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "0"
@@ -80,7 +174,7 @@ label_settings = ExtResource("1_6lghw")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="digit3" type="Label" parent="InputsContainer/DigitsDisplayContainer"]
+[node name="digit3" type="Label" parent="MainContainer/InputsContainer/DigitsDisplayContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "0"
@@ -88,14 +182,14 @@ label_settings = ExtResource("1_6lghw")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label4" type="Label" parent="InputsContainer/DigitsDisplayContainer"]
+[node name="Label4" type="Label" parent="MainContainer/InputsContainer/DigitsDisplayContainer"]
 layout_mode = 2
 text = ")"
 label_settings = ExtResource("1_6lghw")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="digit4" type="Label" parent="InputsContainer/DigitsDisplayContainer"]
+[node name="digit4" type="Label" parent="MainContainer/InputsContainer/DigitsDisplayContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "0"
@@ -103,7 +197,7 @@ label_settings = ExtResource("1_6lghw")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="digit5" type="Label" parent="InputsContainer/DigitsDisplayContainer"]
+[node name="digit5" type="Label" parent="MainContainer/InputsContainer/DigitsDisplayContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "0"
@@ -111,7 +205,7 @@ label_settings = ExtResource("1_6lghw")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="digit6" type="Label" parent="InputsContainer/DigitsDisplayContainer"]
+[node name="digit6" type="Label" parent="MainContainer/InputsContainer/DigitsDisplayContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "0"
@@ -119,14 +213,14 @@ label_settings = ExtResource("1_6lghw")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label12" type="Label" parent="InputsContainer/DigitsDisplayContainer"]
+[node name="Label12" type="Label" parent="MainContainer/InputsContainer/DigitsDisplayContainer"]
 layout_mode = 2
 text = "-"
 label_settings = ExtResource("1_6lghw")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="digit7" type="Label" parent="InputsContainer/DigitsDisplayContainer"]
+[node name="digit7" type="Label" parent="MainContainer/InputsContainer/DigitsDisplayContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "0"
@@ -134,7 +228,7 @@ label_settings = ExtResource("1_6lghw")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="digit8" type="Label" parent="InputsContainer/DigitsDisplayContainer"]
+[node name="digit8" type="Label" parent="MainContainer/InputsContainer/DigitsDisplayContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "0"
@@ -142,7 +236,7 @@ label_settings = ExtResource("1_6lghw")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="digit9" type="Label" parent="InputsContainer/DigitsDisplayContainer"]
+[node name="digit9" type="Label" parent="MainContainer/InputsContainer/DigitsDisplayContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "0"
@@ -150,7 +244,7 @@ label_settings = ExtResource("1_6lghw")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="digit10" type="Label" parent="InputsContainer/DigitsDisplayContainer"]
+[node name="digit10" type="Label" parent="MainContainer/InputsContainer/DigitsDisplayContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "0"
@@ -158,12 +252,12 @@ label_settings = ExtResource("1_6lghw")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ButtonsContainer" type="HBoxContainer" parent="InputsContainer"]
+[node name="ButtonsContainer" type="HBoxContainer" parent="MainContainer/InputsContainer"]
 layout_mode = 2
 theme_override_constants/separation = 10
 alignment = 1
 
-[node name="BackButton" type="Button" parent="InputsContainer/ButtonsContainer"]
+[node name="BackButton" type="Button" parent="MainContainer/InputsContainer/ButtonsContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
@@ -171,105 +265,27 @@ disabled = true
 text = "Back
 "
 
-[node name="NextButton" type="Button" parent="InputsContainer/ButtonsContainer"]
+[node name="NextButton" type="Button" parent="MainContainer/InputsContainer/ButtonsContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Next"
 
-[node name="SaveButton" type="Button" parent="InputsContainer/ButtonsContainer"]
+[node name="SaveButton" type="Button" parent="MainContainer/InputsContainer/ButtonsContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 disabled = true
 text = "Save"
 
-[node name="DisplayContainer" type="MarginContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 200
-theme_override_constants/margin_top = 200
-theme_override_constants/margin_right = 200
-theme_override_constants/margin_bottom = 200
-
-[node name="VBoxContainer" type="VBoxContainer" parent="DisplayContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="DisplayContainer/VBoxContainer"]
+[node name="ErrorMessage" type="Label" parent="MainContainer/InputsContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Placeholder"
-label_settings = SubResource("LabelSettings_5yidf")
+label_settings = ExtResource("5_12f84")
 
-[node name="Fact1" type="Label" parent="DisplayContainer/VBoxContainer"]
-layout_mode = 2
-text = "placeholder
-"
-label_settings = ExtResource("1_6lghw")
-
-[node name="Fact2" type="Label" parent="DisplayContainer/VBoxContainer"]
-layout_mode = 2
-text = "placeholder
-"
-label_settings = ExtResource("1_6lghw")
-
-[node name="Fact3" type="Label" parent="DisplayContainer/VBoxContainer"]
-layout_mode = 2
-text = "placeholder
-"
-label_settings = ExtResource("1_6lghw")
-
-[node name="Fact4" type="Label" parent="DisplayContainer/VBoxContainer"]
-layout_mode = 2
-text = "placeholder
-"
-label_settings = ExtResource("1_6lghw")
-
-[node name="Fact5" type="Label" parent="DisplayContainer/VBoxContainer"]
-layout_mode = 2
-text = "placeholder
-"
-label_settings = ExtResource("1_6lghw")
-
-[node name="Fact6" type="Label" parent="DisplayContainer/VBoxContainer"]
-layout_mode = 2
-text = "placeholder
-"
-label_settings = ExtResource("1_6lghw")
-
-[node name="Fact7" type="Label" parent="DisplayContainer/VBoxContainer"]
-layout_mode = 2
-text = "placeholder
-"
-label_settings = ExtResource("1_6lghw")
-
-[node name="Fact8" type="Label" parent="DisplayContainer/VBoxContainer"]
-layout_mode = 2
-text = "placeholder
-"
-label_settings = ExtResource("1_6lghw")
-
-[node name="Fact9" type="Label" parent="DisplayContainer/VBoxContainer"]
-layout_mode = 2
-text = "placeholder
-"
-label_settings = ExtResource("1_6lghw")
-
-[node name="Fact10" type="Label" parent="DisplayContainer/VBoxContainer"]
-layout_mode = 2
-text = "placeholder
-"
-label_settings = ExtResource("1_6lghw")
-
-[node name="API" type="Node" parent="."]
-script = ExtResource("3_c25mt")
-
-[node name="HTTPRequest" type="HTTPRequest" parent="API"]
-unique_name_in_owner = true
-
-[connection signal="pressed" from="InputsContainer/ButtonsContainer/BackButton" to="." method="_on_back_button_pressed"]
-[connection signal="pressed" from="InputsContainer/ButtonsContainer/NextButton" to="." method="_on_next_button_pressed"]
-[connection signal="pressed" from="InputsContainer/ButtonsContainer/SaveButton" to="." method="_on_save_button_pressed"]
 [connection signal="request_completed" from="API/HTTPRequest" to="API" method="_on_http_request_request_completed"]
+[connection signal="text_changed" from="MainContainer/InputsContainer/NameContainer/FirstNameInput" to="." method="_on_first_name_input_text_changed"]
+[connection signal="text_changed" from="MainContainer/InputsContainer/NameContainer/LastNameInput" to="." method="_on_last_name_input_text_changed"]
+[connection signal="pressed" from="MainContainer/InputsContainer/ButtonsContainer/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="MainContainer/InputsContainer/ButtonsContainer/NextButton" to="." method="_on_next_button_pressed"]
+[connection signal="pressed" from="MainContainer/InputsContainer/ButtonsContainer/SaveButton" to="." method="_on_save_button_pressed"]

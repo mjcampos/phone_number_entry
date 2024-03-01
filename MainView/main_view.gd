@@ -11,6 +11,11 @@ extends Control
 @onready var digit_9: Label = %digit9
 @onready var digit_10: Label = %digit10
 
+@onready var error_message: Label = %ErrorMessage
+
+@onready var first_name_input: LineEdit = %FirstNameInput
+@onready var last_name_input: LineEdit = %LastNameInput
+
 @onready var back_button: Button = %BackButton
 @onready var save_button: Button = %SaveButton
 
@@ -23,6 +28,7 @@ var digits_label_array: Array = []
 @onready var api: Node = $API
 
 func _ready() -> void:
+	error_message.visible = false
 	digits_label_array = [digit, digit_2, digit_3, digit_4, digit_5, digit_6, digit_7, digit_8, digit_9, digit_10]
 	
 func display_phone_number(phone_number: int) -> void:
@@ -79,10 +85,18 @@ func check_if_back_button_needs_disabling() -> void:
 	back_button.disabled = false if generated_numbers.size() > 1 else true
 
 func check_if_save_button_needs_disabling() -> void:
-	save_button.disabled = false if generated_numbers.size() else true
+	save_button.disabled = false if (generated_numbers.size() and first_name_input.text.length() and last_name_input.text.length()) else true
 
 
 func _on_save_button_pressed() -> void:
 	var current_number = generated_numbers[-1]
 
 	api.make_api_call(current_number)
+
+
+func _on_first_name_input_text_changed(new_text: String) -> void:
+	check_if_save_button_needs_disabling()
+
+
+func _on_last_name_input_text_changed(new_text: String) -> void:
+	check_if_save_button_needs_disabling()
