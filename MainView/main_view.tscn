@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://c266s4b80brr"]
+[gd_scene load_steps=3 format=3 uid="uid://c266s4b80brr"]
 
 [ext_resource type="LabelSettings" uid="uid://dvgb7x0nwmied" path="res://digit_label_settings.tres" id="1_6lghw"]
+[ext_resource type="Script" path="res://MainView/main_view.gd" id="1_joqg2"]
 
 [node name="MainView" type="Control"]
 layout_mode = 3
@@ -9,8 +10,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_joqg2")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Background" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -145,3 +147,5 @@ text = "Next"
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Save"
+
+[connection signal="pressed" from="VBoxContainer/ButtonsContainer/NextButton" to="." method="_on_next_button_pressed"]
