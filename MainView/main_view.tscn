@@ -26,10 +26,25 @@ anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_top = -2.0
-offset_bottom = 2.0
+offset_top = -54.0
+offset_bottom = 54.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="FirstNameInput" type="LineEdit" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+placeholder_text = "First Name"
+max_length = 40
+
+[node name="LastNameInput" type="LineEdit" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+placeholder_text = "Last Name"
+max_length = 40
 
 [node name="DigitsDisplayContainer" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
