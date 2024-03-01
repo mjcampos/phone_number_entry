@@ -11,8 +11,6 @@ extends Control
 @onready var digit_9: Label = %digit9
 @onready var digit_10: Label = %digit10
 
-@onready var error_message: Label = %ErrorMessage
-
 @onready var first_name_input: LineEdit = %FirstNameInput
 @onready var last_name_input: LineEdit = %LastNameInput
 
@@ -28,7 +26,6 @@ var digits_label_array: Array = []
 @onready var api: Node = $API
 
 func _ready() -> void:
-	error_message.visible = false
 	digits_label_array = [digit, digit_2, digit_3, digit_4, digit_5, digit_6, digit_7, digit_8, digit_9, digit_10]
 	
 func display_phone_number(phone_number: int) -> void:
