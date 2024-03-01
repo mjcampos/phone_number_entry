@@ -14,34 +14,54 @@ extends Control
 var generated_numbers: Array = []
 var digits_label_array: Array = []
 
+const phone_numbers_min = 1000000000
+const phone_numbers_max := 9999999999
+
 func _ready() -> void:
 	digits_label_array = [digit, digit_2, digit_3, digit_4, digit_5, digit_6, digit_7, digit_8, digit_9, digit_10]
-
-func _on_next_button_pressed() -> void:
-	var digits_array = generate_random_phone_number_digits()
 	
-	for i in digits_label_array.size():
-		digits_label_array[i].text = str(digits_array[i])
-
-func generate_random_phone_number_digits():
+func display_phone_number(phone_number: int) -> void:
 	# Initialize an empty array to store digits
 	var digits_array: Array = []
 	
+	# Convert the number to a string array
+	var number_str := str(phone_number)
+	
+	# Iterate over each character in the string
+	for i in range(number_str.length()):
+		# Convert the character back to an integer and append it to the array
+		digits_array.append(number_str[i])
+		
+	# Display digits array
+	for i in digits_label_array.size():
+		digits_label_array[i].text = digits_array[i]
+
+func _on_next_button_pressed() -> void:
+	var success = generate_random_phone_number_digits()
+	
+	if success:
+		# Get recent number and pass it for display
+		display_phone_number(generated_numbers[-1])
+
+func generate_random_phone_number_digits() -> bool:
 	# Loop until return unique array of digits
-	while true:
+	while generated_numbers.size() <  phone_numbers_max:
 		# Generate a random 10-digit number
-		var random_number := randi_range(1000000000, 9999999999)
+		var random_number := randi_range(phone_numbers_min, phone_numbers_max)
 		
 		if random_number not in generated_numbers:
 			# Save unique number
 			generated_numbers.append(random_number)
 			
-			# Conver the number to a string
-			var number_str := str(random_number)
-			
-			# Iterate over each character in the string
-			for i in range(number_str.length()):
-				# Convert the character back to an integer and append it to the array
-				digits_array.append(number_str[i].to_int())
-				
-			return digits_array
+			return true
+	
+	return false
+
+func _on_back_button_pressed() -> void:
+	# Clear the current number from history
+	generated_numbers.pop_back()
+	
+	# Grab the previous number
+	var previous_number = generated_numbers.pop_back()
+	
+	display_phone_number(previous_number)
