@@ -20,6 +20,8 @@ const phone_numbers_max := 9999999999
 var generated_numbers: Array = []
 var digits_label_array: Array = []
 
+@onready var api: Node = $API
+
 func _ready() -> void:
 	digits_label_array = [digit, digit_2, digit_3, digit_4, digit_5, digit_6, digit_7, digit_8, digit_9, digit_10]
 	
@@ -78,3 +80,9 @@ func check_if_back_button_needs_disabling() -> void:
 
 func check_if_save_button_needs_disabling() -> void:
 	save_button.disabled = false if generated_numbers.size() else true
+
+
+func _on_save_button_pressed() -> void:
+	var current_number = generated_numbers[-1]
+
+	api.make_api_call(current_number)
