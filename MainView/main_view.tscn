@@ -43,21 +43,24 @@ label_settings = ExtResource("1_6lghw")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label10" type="Label" parent="VBoxContainer/DigitsDisplayContainer"]
+[node name="digit" type="Label" parent="VBoxContainer/DigitsDisplayContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "0"
 label_settings = ExtResource("1_6lghw")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="VBoxContainer/DigitsDisplayContainer"]
+[node name="digit2" type="Label" parent="VBoxContainer/DigitsDisplayContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "0"
 label_settings = ExtResource("1_6lghw")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label3" type="Label" parent="VBoxContainer/DigitsDisplayContainer"]
+[node name="digit3" type="Label" parent="VBoxContainer/DigitsDisplayContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "0"
 label_settings = ExtResource("1_6lghw")
@@ -71,21 +74,24 @@ label_settings = ExtResource("1_6lghw")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label11" type="Label" parent="VBoxContainer/DigitsDisplayContainer"]
+[node name="digit4" type="Label" parent="VBoxContainer/DigitsDisplayContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "0"
 label_settings = ExtResource("1_6lghw")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label5" type="Label" parent="VBoxContainer/DigitsDisplayContainer"]
+[node name="digit5" type="Label" parent="VBoxContainer/DigitsDisplayContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "0"
 label_settings = ExtResource("1_6lghw")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label6" type="Label" parent="VBoxContainer/DigitsDisplayContainer"]
+[node name="digit6" type="Label" parent="VBoxContainer/DigitsDisplayContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "0"
 label_settings = ExtResource("1_6lghw")
@@ -99,28 +105,32 @@ label_settings = ExtResource("1_6lghw")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label7" type="Label" parent="VBoxContainer/DigitsDisplayContainer"]
+[node name="digit7" type="Label" parent="VBoxContainer/DigitsDisplayContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "0"
 label_settings = ExtResource("1_6lghw")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label8" type="Label" parent="VBoxContainer/DigitsDisplayContainer"]
+[node name="digit8" type="Label" parent="VBoxContainer/DigitsDisplayContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "0"
 label_settings = ExtResource("1_6lghw")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label13" type="Label" parent="VBoxContainer/DigitsDisplayContainer"]
+[node name="digit9" type="Label" parent="VBoxContainer/DigitsDisplayContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "0"
 label_settings = ExtResource("1_6lghw")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label9" type="Label" parent="VBoxContainer/DigitsDisplayContainer"]
+[node name="digit10" type="Label" parent="VBoxContainer/DigitsDisplayContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "0"
 label_settings = ExtResource("1_6lghw")
