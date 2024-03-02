@@ -41,3 +41,7 @@ func show_facts(facts: Dictionary, phone_number_string_array: Array) -> void:
 	
 	display_container.visible = true
 	inputs_container.visible = false
+
+
+func _on_reset_button_pressed() -> void:
+	get_tree().reload_current_scene()

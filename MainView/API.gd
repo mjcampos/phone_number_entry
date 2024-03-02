@@ -2,6 +2,7 @@ extends Node
 
 @onready var http_request: HTTPRequest = %HTTPRequest
 @onready var main_container: MarginContainer = %MainContainer
+@onready var save_button: Button = %SaveButton
 
 const URL = "http://numbersapi.com/"
 const suffix = "/trivia?fragment"
@@ -13,6 +14,7 @@ func make_api_call(phone_number: int) -> void:
 	var modified_url = URL + stringed_phone_number + suffix
 	
 	phone_number_array = integer_to_digit_array(phone_number)
+	save_button.disabled = true
 	
 	$HTTPRequest.request(modified_url)
 
@@ -43,6 +45,8 @@ func integer_to_digit_array(number: int) -> Array:
 	return digit_array
 
 func _on_http_request_request_completed(result: int, response_code: int, headers: PackedStringArray, body: PackedByteArray) -> void:
+	save_button.disabled = false
+	
 	if response_code == 200:
 		# Parse the returned body
 		var random_number_facts = JSON.parse_string(body.get_string_from_utf8())
