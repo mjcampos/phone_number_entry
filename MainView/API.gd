@@ -3,6 +3,7 @@ extends Node
 @onready var http_request: HTTPRequest = %HTTPRequest
 @onready var main_container: MarginContainer = %MainContainer
 @onready var save_button: Button = %SaveButton
+@onready var error_message: Label = %ErrorMessage
 
 const URL = "http://numbersapi.com/"
 const suffix = "/trivia?fragment"
@@ -15,6 +16,7 @@ func make_api_call(phone_number: int) -> void:
 	
 	phone_number_array = integer_to_digit_array(phone_number)
 	save_button.disabled = true
+	error_message.visible = false
 	
 	$HTTPRequest.request(modified_url)
 
@@ -32,7 +34,7 @@ func integer_with_commas(number: int) -> String:
 			result += ","
 	
 	return result
-	
+
 func integer_to_digit_array(number: int) -> Array:
 	var number_str = str(number)  # Convert integer to string
 	var digit_array = []  # Initialize array to store digits
@@ -54,3 +56,4 @@ func _on_http_request_request_completed(result: int, response_code: int, headers
 		main_container.show_facts(random_number_facts, phone_number_array)
 	else:
 		print("We have a problem")
+		error_message.visible = true
