@@ -48,9 +48,9 @@ text = "Back"
 layout_mode = 2
 text = "This game was the first I ever created and was done for the \"Phone Book Entry\" competition on itch.io, the first ever game jam I had the honor of participating in. It'll only get better from here!
 
-I couldn't have done this without the love and support of my family back home: my brother Daniel and father Wilfredo; and my mom Virginia out there in heaven.
+I couldn't have done this without the love and support of my family back home: my brother and father; and my mom out there in heaven.
 
-Thanks also to my friends who kept my spirts up with their happy-go-lucky attitudes; and especially Justin who introduced me to Godot and inspired me to grow my game dev skills. "
+Thanks also to my friends who kept my spirts up with their happy-go-lucky attitudes and inspired me to let loose as well!"
 label_settings = SubResource("LabelSettings_cajs1")
 autowrap_mode = 3
 
