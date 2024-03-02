@@ -49,4 +49,9 @@ horizontal_alignment = 1
 layout_mode = 2
 text = "Enter New Contact"
 
+[node name="CreditsButton" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Credits"
+
 [connection signal="pressed" from="MarginContainer/VBoxContainer/NewEntryButton" to="." method="_on_new_entry_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
