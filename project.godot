@@ -13,4 +13,4 @@ config_version=5
 config/name="PhoneBookEntry"
 run/main_scene="res://MainView/main_view.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://Assets/icon.PNG"
