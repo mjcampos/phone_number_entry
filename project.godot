@@ -14,3 +14,12 @@ config/name="PhoneBookEntry"
 run/main_scene="res://Menu/menu.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://Assets/icon.PNG"
+
+[display]
+
+window/size/viewport_width=640
+window/size/viewport_height=360
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"

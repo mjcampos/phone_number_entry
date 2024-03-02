@@ -9,7 +9,7 @@
 [ext_resource type="LabelSettings" uid="uid://bxbed8gbj1odp" path="res://error_label_settings.tres" id="7_bmui7"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_5yidf"]
-font_size = 32
+font_size = 13
 font_color = Color(0, 0, 0, 1)
 
 [node name="MainView" type="Control"]
@@ -37,26 +37,18 @@ script = ExtResource("3_c25mt")
 [node name="MainContainer" type="MarginContainer" parent="."]
 unique_name_in_owner = true
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -342.0
-offset_top = -160.0
-offset_right = 342.0
-offset_bottom = 160.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 200
-theme_override_constants/margin_top = 100
-theme_override_constants/margin_right = 200
-theme_override_constants/margin_bottom = 100
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 25
 script = ExtResource("3_6w7s7")
 
 [node name="DisplayContainer" type="VBoxContainer" parent="MainContainer"]
 unique_name_in_owner = true
-visible = false
 layout_mode = 2
 
 [node name="Message" type="Label" parent="MainContainer/DisplayContainer"]
@@ -151,6 +143,7 @@ text = "Create New Contact?"
 
 [node name="InputsContainer" type="VBoxContainer" parent="MainContainer"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
