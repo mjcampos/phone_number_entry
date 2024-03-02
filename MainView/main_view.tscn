@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://c266s4b80brr"]
+[gd_scene load_steps=8 format=3 uid="uid://c266s4b80brr"]
 
 [ext_resource type="LabelSettings" uid="uid://dvgb7x0nwmied" path="res://digit_label_settings.tres" id="1_6lghw"]
 [ext_resource type="Script" path="res://MainView/main_view.gd" id="1_joqg2"]
 [ext_resource type="Script" path="res://MainView/MainContainer.gd" id="3_6w7s7"]
 [ext_resource type="Script" path="res://MainView/API.gd" id="3_c25mt"]
+[ext_resource type="LabelSettings" uid="uid://d0an2pm6f5u6q" path="res://facts_label_settings.tres" id="4_ias16"]
 [ext_resource type="LabelSettings" uid="uid://cns1k4dnrqal6" path="res://user_input_label_settings.tres" id="5_r3pye"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_5yidf"]
@@ -54,7 +55,6 @@ script = ExtResource("3_6w7s7")
 
 [node name="DisplayContainer" type="VBoxContainer" parent="MainContainer"]
 unique_name_in_owner = true
-visible = false
 layout_mode = 2
 
 [node name="Message" type="Label" parent="MainContainer/DisplayContainer"]
@@ -68,73 +68,84 @@ unique_name_in_owner = true
 layout_mode = 2
 text = "placeholder
 "
-label_settings = ExtResource("1_6lghw")
+label_settings = ExtResource("4_ias16")
+autowrap_mode = 3
 
 [node name="Fact2" type="Label" parent="MainContainer/DisplayContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "placeholder
 "
-label_settings = ExtResource("1_6lghw")
+label_settings = ExtResource("4_ias16")
+autowrap_mode = 3
 
 [node name="Fact3" type="Label" parent="MainContainer/DisplayContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "placeholder
 "
-label_settings = ExtResource("1_6lghw")
+label_settings = ExtResource("4_ias16")
+autowrap_mode = 3
 
 [node name="Fact4" type="Label" parent="MainContainer/DisplayContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "placeholder
 "
-label_settings = ExtResource("1_6lghw")
+label_settings = ExtResource("4_ias16")
+autowrap_mode = 3
 
 [node name="Fact5" type="Label" parent="MainContainer/DisplayContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "placeholder
 "
-label_settings = ExtResource("1_6lghw")
+label_settings = ExtResource("4_ias16")
+autowrap_mode = 3
 
 [node name="Fact6" type="Label" parent="MainContainer/DisplayContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "placeholder
 "
-label_settings = ExtResource("1_6lghw")
+label_settings = ExtResource("4_ias16")
+autowrap_mode = 3
 
 [node name="Fact7" type="Label" parent="MainContainer/DisplayContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "placeholder
 "
-label_settings = ExtResource("1_6lghw")
+label_settings = ExtResource("4_ias16")
+autowrap_mode = 3
 
 [node name="Fact8" type="Label" parent="MainContainer/DisplayContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "placeholder
 "
-label_settings = ExtResource("1_6lghw")
+label_settings = ExtResource("4_ias16")
+autowrap_mode = 3
 
 [node name="Fact9" type="Label" parent="MainContainer/DisplayContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "placeholder
 "
-label_settings = ExtResource("1_6lghw")
+label_settings = ExtResource("4_ias16")
+autowrap_mode = 3
 
 [node name="Fact10" type="Label" parent="MainContainer/DisplayContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "placeholder
 "
-label_settings = ExtResource("1_6lghw")
+label_settings = ExtResource("4_ias16")
+autowrap_mode = 3
 
 [node name="InputsContainer" type="VBoxContainer" parent="MainContainer"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
