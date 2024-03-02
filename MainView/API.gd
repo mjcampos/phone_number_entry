@@ -2,7 +2,6 @@ extends Node
 
 @onready var main_container: MarginContainer = %MainContainer
 @onready var save_button: Button = %SaveButton
-@onready var error_message: Label = %ErrorMessage
 
 const repo = { 
 	"0": "the coldest possible temperature old the Kelvin scale", 

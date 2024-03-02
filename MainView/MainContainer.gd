@@ -19,8 +19,6 @@ extends MarginContainer
 @onready var fact_9: Label = %Fact9
 @onready var fact_10: Label = %Fact10
 
-@onready var error_message: Label = %ErrorMessage
-
 var facts_label_array: Array = []
 
 # Called when the node enters the scene tree for the first time.
@@ -28,7 +26,6 @@ func _ready() -> void:
 	facts_label_array = [fact_1, fact_2, fact_3, fact_4, fact_5, fact_6, fact_7, fact_8, fact_9, fact_10]
 	display_container.visible = false
 	inputs_container.visible = true
-	error_message.visible = false
 
 func show_facts(facts: Dictionary, phone_number_string_array: Array) -> void:
 	var first_name = first_name_input.text

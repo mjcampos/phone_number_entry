@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c266s4b80brr"]
+[gd_scene load_steps=8 format=3 uid="uid://c266s4b80brr"]
 
 [ext_resource type="LabelSettings" uid="uid://dvgb7x0nwmied" path="res://digit_label_settings.tres" id="1_6lghw"]
 [ext_resource type="Script" path="res://MainView/main_view.gd" id="1_joqg2"]
@@ -6,7 +6,6 @@
 [ext_resource type="Script" path="res://MainView/API.gd" id="3_c25mt"]
 [ext_resource type="LabelSettings" uid="uid://d0an2pm6f5u6q" path="res://facts_label_settings.tres" id="4_ias16"]
 [ext_resource type="LabelSettings" uid="uid://cns1k4dnrqal6" path="res://user_input_label_settings.tres" id="5_r3pye"]
-[ext_resource type="LabelSettings" uid="uid://bxbed8gbj1odp" path="res://error_label_settings.tres" id="7_bmui7"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_5yidf"]
 font_size = 13
@@ -306,13 +305,6 @@ text = "Save"
 layout_mode = 2
 text = "Please pick your phone number and don't forget to put in your first and last names too!"
 label_settings = ExtResource("5_r3pye")
-
-[node name="ErrorMessage" type="Label" parent="MainContainer/InputsContainer"]
-unique_name_in_owner = true
-visible = false
-layout_mode = 2
-text = "* We have a problem. Unable to save your contact"
-label_settings = ExtResource("7_bmui7")
 
 [connection signal="pressed" from="MainContainer/DisplayContainer/ResetButton" to="MainContainer" method="_on_reset_button_pressed"]
 [connection signal="text_changed" from="MainContainer/InputsContainer/NameContainer/FirstNameInput" to="." method="_on_first_name_input_text_changed"]
