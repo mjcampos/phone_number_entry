@@ -31,9 +31,9 @@ grow_vertical = 2
 script = ExtResource("3_c25mt")
 
 [node name="HTTPRequest" type="HTTPRequest" parent="API"]
-unique_name_in_owner = true
 
 [node name="MainContainer" type="MarginContainer" parent="."]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -58,65 +58,76 @@ visible = false
 layout_mode = 2
 
 [node name="Message" type="Label" parent="MainContainer/DisplayContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Placeholder"
 label_settings = SubResource("LabelSettings_5yidf")
 
 [node name="Fact1" type="Label" parent="MainContainer/DisplayContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "placeholder
 "
 label_settings = ExtResource("1_6lghw")
 
 [node name="Fact2" type="Label" parent="MainContainer/DisplayContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "placeholder
 "
 label_settings = ExtResource("1_6lghw")
 
 [node name="Fact3" type="Label" parent="MainContainer/DisplayContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "placeholder
 "
 label_settings = ExtResource("1_6lghw")
 
 [node name="Fact4" type="Label" parent="MainContainer/DisplayContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "placeholder
 "
 label_settings = ExtResource("1_6lghw")
 
 [node name="Fact5" type="Label" parent="MainContainer/DisplayContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "placeholder
 "
 label_settings = ExtResource("1_6lghw")
 
 [node name="Fact6" type="Label" parent="MainContainer/DisplayContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "placeholder
 "
 label_settings = ExtResource("1_6lghw")
 
 [node name="Fact7" type="Label" parent="MainContainer/DisplayContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "placeholder
 "
 label_settings = ExtResource("1_6lghw")
 
 [node name="Fact8" type="Label" parent="MainContainer/DisplayContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "placeholder
 "
 label_settings = ExtResource("1_6lghw")
 
 [node name="Fact9" type="Label" parent="MainContainer/DisplayContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "placeholder
 "
 label_settings = ExtResource("1_6lghw")
 
 [node name="Fact10" type="Label" parent="MainContainer/DisplayContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "placeholder
 "
