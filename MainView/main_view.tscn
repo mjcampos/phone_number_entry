@@ -32,8 +32,6 @@ grow_vertical = 2
 [node name="API" type="Node" parent="."]
 script = ExtResource("3_c25mt")
 
-[node name="HTTPRequest" type="HTTPRequest" parent="API"]
-
 [node name="MainContainer" type="MarginContainer" parent="."]
 unique_name_in_owner = true
 layout_mode = 1
@@ -316,7 +314,6 @@ layout_mode = 2
 text = "* We have a problem. Unable to save your contact"
 label_settings = ExtResource("7_bmui7")
 
-[connection signal="request_completed" from="API/HTTPRequest" to="API" method="_on_http_request_request_completed"]
 [connection signal="pressed" from="MainContainer/DisplayContainer/ResetButton" to="MainContainer" method="_on_reset_button_pressed"]
 [connection signal="text_changed" from="MainContainer/InputsContainer/NameContainer/FirstNameInput" to="." method="_on_first_name_input_text_changed"]
 [connection signal="text_changed" from="MainContainer/InputsContainer/NameContainer/LastNameInput" to="." method="_on_last_name_input_text_changed"]
