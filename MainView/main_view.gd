@@ -97,3 +97,7 @@ func _on_first_name_input_text_changed(new_text: String) -> void:
 
 func _on_last_name_input_text_changed(new_text: String) -> void:
 	check_if_save_button_needs_disabling()
+
+
+func _on_menu_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://Menu/menu.tscn")

@@ -49,6 +49,7 @@ script = ExtResource("3_6w7s7")
 
 [node name="DisplayContainer" type="VBoxContainer" parent="MainContainer"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 
 [node name="Message" type="Label" parent="MainContainer/DisplayContainer"]
@@ -143,7 +144,6 @@ text = "Create New Contact?"
 
 [node name="InputsContainer" type="VBoxContainer" parent="MainContainer"]
 unique_name_in_owner = true
-visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -277,6 +277,13 @@ layout_mode = 2
 theme_override_constants/separation = 10
 alignment = 1
 
+[node name="MenuButton" type="Button" parent="MainContainer/InputsContainer/ButtonsContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Menu
+"
+
 [node name="BackButton" type="Button" parent="MainContainer/InputsContainer/ButtonsContainer"]
 unique_name_in_owner = true
 layout_mode = 2
@@ -313,6 +320,7 @@ label_settings = ExtResource("7_bmui7")
 [connection signal="pressed" from="MainContainer/DisplayContainer/ResetButton" to="MainContainer" method="_on_reset_button_pressed"]
 [connection signal="text_changed" from="MainContainer/InputsContainer/NameContainer/FirstNameInput" to="." method="_on_first_name_input_text_changed"]
 [connection signal="text_changed" from="MainContainer/InputsContainer/NameContainer/LastNameInput" to="." method="_on_last_name_input_text_changed"]
+[connection signal="pressed" from="MainContainer/InputsContainer/ButtonsContainer/MenuButton" to="." method="_on_menu_button_pressed"]
 [connection signal="pressed" from="MainContainer/InputsContainer/ButtonsContainer/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="MainContainer/InputsContainer/ButtonsContainer/NextButton" to="." method="_on_next_button_pressed"]
 [connection signal="pressed" from="MainContainer/InputsContainer/ButtonsContainer/SaveButton" to="." method="_on_save_button_pressed"]
